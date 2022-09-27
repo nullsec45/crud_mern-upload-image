@@ -25,7 +25,7 @@ export const getProductById=async (req,res) =>{
 }
 
 export const saveProduct=(req,res) =>{
-    if(req.files == null) return res.status(400).json({img:"No File Uploaded"});
+    if(req.files === null) return res.status(400).json({img:"No File Uploaded"});
     const name=req.body.title;
     const file=req.files.file;
     const fileSize=file.data.length;
@@ -61,7 +61,7 @@ export const updateProduct=async (req,res) =>{
     
     let fileName="";
     if(req.files === null){
-        fileName=Product.image;
+        fileName=product.image; 
     }else{
         const file=req.files.file;
         const fileSize=file.data.length;
